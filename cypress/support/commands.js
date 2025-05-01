@@ -1,3 +1,5 @@
+import 'cypress-file-upload' // required for file upload test
+
 Cypress.Commands.add('login', () => {
   cy.visit('/auth_ecommerce');
   cy.contains('Login - Shop');
