@@ -1,2 +1,7 @@
-# homebox-cypress-tests
-A suite of tests written in Cypress to demonstrate testing functionality
+# Homebox QA Cypress Challenge
+## 🛠️ Setup
+1. Clone the repo
+2. Run:
+3. ```bash
+   npm install
+   npx cypress open
