@@ -1,2 +1,2 @@
 # homebox-cypress-tests
-Some new changes here!
+A suite of tests written in Cypress to demonstrate testing functionality
