@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-describe('E-commerce Flow', () => {
+describe('E-commerce Cart Flow', () => {
 
     beforeEach(() => {
       cy.visit('/auth_ecommerce');
@@ -18,7 +18,10 @@ describe('E-commerce Flow', () => {
     it('Add items to the cart', () => {
       cy.login();
       cy.get(':nth-child(1) > .shop-item-details > .btn').click();
-      cy.get('.cart-item-title').contains('Apple iPhone 12, 128GB');
+      cy.get('.shop-item-title')
+        .contains('Apple iPhone 12, 128GB') // verify item title
+      cy.get('.shop-item-price')
+        .contains('$905.99'); // verify item price
       cy.contains('PROCEED TO CHECKOUT').click()
       cy.contains('Shipping Details')
 
@@ -45,6 +48,10 @@ describe('E-commerce Flow', () => {
       cy.get('#message').contains('Congrats! Your order of')
       cy.contains(street).should('be.visible');
       cy.contains(city).should('be.visible');
+
+      // Log out of session
+      cy.contains('Log Out').click()
+      cy.contains('Login - Shop') // ensure user is redirected
     });
   
     it('Handles invalid login', () => {
