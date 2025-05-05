@@ -21,6 +21,7 @@ describe ('Registation test', () => {
         });
         cy.get('#emailAddress').type(email)
         cy.get('#password').type(password)
+        cy.get('input[name="password"]').should('have.attr', 'type', 'password');
         cy.get('.form-check-label').contains('agree with the terms').click()
         cy.get('#registerBtn').click()
 

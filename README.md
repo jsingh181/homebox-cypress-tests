@@ -50,3 +50,8 @@ There are two main ways of running these tests:
    ```
    npx cypress cache clear
 - If you're facing issues with Node.js, ensure you’re using the supported version (14.x or above).
+
+## Additional packages used in this repository
+- cypress-file-upload
+- faker.js
+- cypress-real-events
