@@ -1,12 +1,16 @@
-# Homebox Automation Challenge
+# Homebox Cypress Challenge
 ## Prerequisites
 
 Before setting up the project, ensure you have the following:
 
 - **Node.js**: Version 14.x or above (Download from [Node.js](https://nodejs.org/))
 - **npm**: Comes with Node.js, but ensure you have the latest version by running `npm install -g npm`
+- `@faker-js/faker` for generating fake data
+- `cypress-file-upload` plugin for file tests
+- `cypress-real-events` plugin for tabbing support
 
-## ⚙️ Setup Instructions
+
+## ✅ Setup Instructions
 
 1. Clone this repository:
    ```bash
@@ -28,7 +32,7 @@ Before setting up the project, ensure you have the following:
 ## ▶️ Running Cypress Tests
 There are two main ways of running these tests:
    
-1. Open Cypress (opens test runner app):
+1. Open Cypress (interactive mode):
    ```bash
    npx cypress open
    
@@ -42,11 +46,13 @@ There are two main ways of running these tests:
 
 <br> 
 
-## 📁 Project Structure
+## 🧪 Project Structure
 
-- **e2e**: Contains test files for end-to-end testing.
-- **cypress/fixtures**: Contains data files for tests.
-- **cypress/support**: Custom commands and utility functions.
+- `cypress/e2e/authFlow.cy.js` – Auth and order flow
+- `cypress/e2e/fileUpload.cy.js` – File upload test
+- `cypress/e2e/registerForm.cy.js` – Registration form test with faker
+- `cypress/e2e/recoverPassword.cy.js` – Password reset field test
+- `cypress/support/commands.js` – Custom commands like login and form fill
 
 <br> 
 
@@ -63,7 +69,40 @@ There are two main ways of running these tests:
    npx cypress cache clear
 - If you're facing issues with Node.js, ensure you’re using the supported version (14.x or above).
 
-## Additional packages used in this repository
+## 📦 Packages used in this repository & setup note
 - cypress-file-upload
-- faker.js
 - cypress-real-events
+- faker.js
+
+> cypress-file-upload
+```bash
+npm install --save-dev @faker-js/faker cypress-file-upload
+```
+
+Then in `cypress/support/commands.js`:
+```js
+import 'cypress-file-upload';
+```
+
+> cypress-real-events
+```bash
+npm install cypress-real-events  
+```  
+
+Then in `cypress/support/e2e.js`:
+```js
+import 'cypress-real-events/support';
+```
+
+> faker.js
+```bash
+npm install --save-dev @faker-js/faker
+```
+
+## 🚀 Notes
+
+- All tests target https://qa-practice.netlify.app
+- Place your sample upload file in `cypress/fixtures/`
+
+
+Happy Testing! 🚀

@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 
 describe ('Registation test', () => {
-    it('submits the registration form', () => {
+    it('Submits the registration form', () => {
         const firstName = faker.person.firstName();
         const lastName = faker.person.lastName();
         const phone = '07' + faker.string.numeric(9);
@@ -21,11 +21,24 @@ describe ('Registation test', () => {
         });
         cy.get('#emailAddress').type(email)
         cy.get('#password').type(password)
-        cy.get('input[name="password"]').should('have.attr', 'type', 'password');
+        cy.get('input[name="password"]').should('have.attr', 'type', 'password'); // password masking
         cy.get('.form-check-label').contains('agree with the terms').click()
         cy.get('#registerBtn').click()
 
         // check confirmation of successful registration
         cy.contains('The account has been successfully created!')
+    });
+
+    it('Handles invalid email format', () => {
+        cy.visit('/register')
+        cy.get('#emailAddress').type('abc')
+        cy.get('#password').type('wrongpass');
+        cy.get('#registerBtn').click()
+        cy.get('#message').should('exist'); // toast message
+    
+        cy.get('#emailAddress').then(($input) => {
+          expect($input[0].checkValidity()).to.be.false;
+          expect($input[0].validationMessage).to.include("Please include an '@' in the email address."); // Can vary per browser
+          })
     });
 });
