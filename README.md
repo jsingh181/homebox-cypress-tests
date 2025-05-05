@@ -20,9 +20,11 @@ Before setting up the project, ensure you have the following:
 3. Install Cypress (version 10.x or above):
    ```bash
    npm install cypress --save-dev  
-<br>
-Tip: To confirm that cypress is installed correctly, run: `npx cypress --version`  
- 
+
+> **Tip:** To confirm that cypress is installed correctly, run: `npx cypress --version`  
+
+<br>  
+
 ## ▶️ Running Cypress Tests
 There are two main ways of running these tests:
    
@@ -34,16 +36,26 @@ There are two main ways of running these tests:
    ```bash
    npx cypress run
 
+> **Note:** To run specific files, you may also choose to use the following command (replace file name with your file)
+>  ```bash
+>  npx cypress run --spec "cypress/e2e/authFlow.cy.js"
+
+<br> 
+
 ## 📁 Project Structure
 
 - **e2e**: Contains test files for end-to-end testing.
 - **cypress/fixtures**: Contains data files for tests.
 - **cypress/support**: Custom commands and utility functions.
 
+<br> 
+
 ## Cypress Version
 
 - Cypress v14.3.2 or above is used in this repository.  _This is the latest version as of 22/04/2025._
 - Installed version can also be checked within `package.json`
+
+<br> 
 
 ## 🛠️ Troubleshooting
 - If Cypress doesn't open or runs into issues, try clearing the cache:
