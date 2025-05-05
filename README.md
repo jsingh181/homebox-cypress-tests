@@ -69,6 +69,8 @@ There are two main ways of running these tests:
    npx cypress cache clear
 - If you're facing issues with Node.js, ensure you’re using the supported version (14.x or above).
 
+<br> 
+
 ## 📦 Packages used in this repository & setup note
 - cypress-file-upload
 - cypress-real-events
@@ -98,6 +100,7 @@ import 'cypress-real-events/support';
 ```bash
 npm install --save-dev @faker-js/faker
 ```
+<br> 
 
 ## 🚀 Notes
 
