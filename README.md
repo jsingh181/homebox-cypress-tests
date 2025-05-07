@@ -5,9 +5,6 @@ Before setting up the project, ensure you have the following:
 
 - **Node.js**: Version 14.x or above (Download from [Node.js](https://nodejs.org/))
 - **npm**: Comes with Node.js, but ensure you have the latest version by running `npm install -g npm`
-- `@faker-js/faker` for generating fake data
-- `cypress-file-upload` plugin for file tests
-- `cypress-real-events` plugin for tabbing support
 
 
 ## ✅ Setup Instructions
@@ -58,7 +55,7 @@ There are two main ways of running these tests:
 
 ## Cypress Version
 
-- Cypress v14.3.2 or above is used in this repository.  _This is the latest version as of 22/04/2025._
+- Cypress v14.3.3 or above is used in this repository.
 - Installed version can also be checked within `package.json`
 
 <br> 
