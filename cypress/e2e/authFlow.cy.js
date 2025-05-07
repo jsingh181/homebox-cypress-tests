@@ -100,7 +100,7 @@ describe('E-commerce Cart Flow', () => {
     cy.get('#password').should('have.attr', 'placeholder', 'Enter Password - insert admin123');
   });
 
-  it.only('checking tab order accessibility', () => {
+  it('checking tab order accessibility', () => {
     // We need to use the cypress-real-events plugin for this test, import
     cy.get('#email').click()
     .realPress('Tab'); // simulates keyboard tab action
