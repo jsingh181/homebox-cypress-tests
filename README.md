@@ -56,10 +56,10 @@ Tradtional cypress tests using describe
 
 ### BDD
 Behaviour driven using Gherkin syntax
-- file-upoad.feature
-- recover-password.feature
-- register-form.feature
-- auth-flow.feature
+- `file-upoad.feature`
+- `recover-password.feature`
+- `register-form.feature`
+- `auth-flow.feature`
 
 <br> 
 
