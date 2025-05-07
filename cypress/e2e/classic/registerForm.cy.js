@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-describe ('Registation test', () => {
+describe ('Registration test', () => {
     it('Submits the registration form', () => {
         const firstName = faker.person.firstName();
         const lastName = faker.person.lastName();

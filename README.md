@@ -44,12 +44,22 @@ There are two main ways of running these tests:
 <br> 
 
 ## 🧪 Project Structure
+Project is structured into `classic` and `bdd`:
 
+### Classic
+Tradtional cypress tests using describe
 - `cypress/e2e/authFlow.cy.js` – Auth and order flow
 - `cypress/e2e/fileUpload.cy.js` – File upload test
 - `cypress/e2e/registerForm.cy.js` – Registration form test with faker
 - `cypress/e2e/recoverPassword.cy.js` – Password reset field test
 - `cypress/support/commands.js` – Custom commands like login and form fill
+
+### BDD
+Behaviour driven using Gherkin syntax
+- file-upoad.feature
+- recover-password.feature
+- register-form.feature
+- auth-flow.feature
 
 <br> 
 
@@ -72,6 +82,7 @@ There are two main ways of running these tests:
 - cypress-file-upload
 - cypress-real-events
 - faker.js
+- @badeball/cypress-cucumber-preprocessor (for BDD)
 
 > cypress-file-upload
 ```bash
@@ -97,6 +108,12 @@ import 'cypress-real-events/support';
 ```bash
 npm install --save-dev @faker-js/faker
 ```
+
+> @badeball/cypress-cucumber-preprocessor @bahmutov/cypress-esbuild-preprocessor esbuild
+```bash
+npm install --save-dev @badeball/cypress-cucumber-preprocessor @bahmutov/cypress-esbuild-preprocessor esbuild
+```
+
 <br> 
 
 ## 🚀 Notes
