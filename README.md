@@ -1,4 +1,4 @@
-# Netlify Cypress Challenge
+# Netlify QA Practice Cypress Challenge
 ## Prerequisites
 
 Before setting up the project, ensure you have the following:
